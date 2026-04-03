@@ -105,6 +105,7 @@ int main(int argc, char *argv[]) {
   // Parse command line arguments
   std::string url = config.getDefaultUrl();
   std::string profile_mode_override;
+  std::string custom_profile_path;
   std::string graphics_protocol_override;
 
   for (int i = 1; i < argc; i++) {
@@ -116,7 +117,7 @@ int main(int argc, char *argv[]) {
       std::cout << "Options:\n";
       std::cout << "  --persistent        Use persistent profile mode\n";
       std::cout << "  --temporary         Use temporary profile mode\n";
-      std::cout << "  --custom            Use custom profile mode\n";
+      std::cout << "  --custom            Use custom profile mode (./brow6el_profile/)\n";
       std::cout << "  --sixel             Use sixel graphics protocol\n";
       std::cout << "  --kitty             Use kitty graphics protocol\n";
       std::cout << "  --version           Show version information\n\n";
@@ -173,6 +174,14 @@ int main(int argc, char *argv[]) {
       profile_mode_override = "temporary";
     } else if (arg == "--custom") {
       profile_mode_override = "custom";
+      // Get current working directory
+      char cwd[1024];
+      if (getcwd(cwd, sizeof(cwd)) != nullptr) {
+        custom_profile_path = std::string(cwd) + "/brow6el_profile";
+      } else {
+        std::cerr << "Error: Failed to get current working directory" << std::endl;
+        return 1;
+      }
     } else if (arg == "--sixel") {
       graphics_protocol_override = "sixel";
     } else if (arg == "--kitty") {
@@ -235,7 +244,7 @@ int main(int argc, char *argv[]) {
 
   // Apply command-line override if provided
   if (!profile_mode_override.empty()) {
-    profile_config.overrideMode(profile_mode_override);
+    profile_config.overrideMode(profile_mode_override, custom_profile_path);
   }
   
   // Apply graphics protocol override if provided

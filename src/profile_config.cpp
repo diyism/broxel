@@ -435,7 +435,7 @@ void ProfileConfig::cleanupProfile() {
   }
 }
 
-void ProfileConfig::overrideMode(const std::string &mode_str) {
+void ProfileConfig::overrideMode(const std::string &mode_str, const std::string &custom_path) {
   if (mode_str == "persistent") {
     mode_ = ProfileMode::Persistent;
     std::cout << "Profile mode overridden to: persistent" << std::endl;
@@ -444,7 +444,12 @@ void ProfileConfig::overrideMode(const std::string &mode_str) {
     std::cout << "Profile mode overridden to: temporary" << std::endl;
   } else if (mode_str == "custom") {
     mode_ = ProfileMode::Custom;
-    std::cout << "Profile mode overridden to: custom" << std::endl;
+    if (!custom_path.empty()) {
+      custom_path_ = custom_path;
+      std::cout << "Profile mode overridden to: custom (path: " << custom_path_ << ")" << std::endl;
+    } else {
+      std::cout << "Profile mode overridden to: custom" << std::endl;
+    }
   } else {
     std::cerr << "Unknown profile mode: " << mode_str << std::endl;
   }

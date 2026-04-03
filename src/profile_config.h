@@ -48,7 +48,7 @@ public:
   // Set mode (for command line override)
   void setMode(ProfileMode mode) { mode_ = mode; }
   void setCustomPath(const std::string &path) { custom_path_ = path; }
-  void overrideMode(const std::string &mode_str);
+  void overrideMode(const std::string &mode_str, const std::string &custom_path = "");
   void overrideGraphicsProtocol(const std::string &protocol) { 
     if (protocol == "sixel" || protocol == "kitty") {
       graphics_protocol_ = protocol;
