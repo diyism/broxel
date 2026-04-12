@@ -1,3 +1,4 @@
+    // original: https://codeberg.org/janantos/brow6el
     // modified feature: "--custom" means ./brow6el_profile/ is the profile folder:
     brow6el --custom https://www.google.com/ncr
 
