@@ -1,3 +1,6 @@
+    // modified feature: "--custom" means ./brow6el_profile/ is the profile folder:
+    brow6el --custom https://www.google.com/ncr
+
 # Brow6el - Terminal Web Browser with Graphics Support
 
 A full-featured web browser for the terminal using Chromium (CEF) with support for Sixel and Kitty graphics protocols.
