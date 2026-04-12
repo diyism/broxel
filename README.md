@@ -1,4 +1,6 @@
     // original: https://codeberg.org/janantos/brow6el
+    // use "x" key to exit, if used "ctrl+c", use "reset" command to avoid mouse events printing
+
     // modified feature: "--custom" means ./brow6el_profile/ is the profile folder:
     brow6el --custom https://www.google.com/ncr
 
