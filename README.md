@@ -2,7 +2,7 @@
     $ git clone https://github.com/diyism/broxel
     $ cd broxel
     $ sudo apt install -y cmake build-essential pkg-config
-    $ sudo apt install -y libsixel1 libsixel-dev
+    $ sudo apt install -y libsixel-dev libx11-dev
     $ ./download_cef.sh
     $ ./build.sh
     $ ./build/run_brow6el.sh https://www.google.com/ncr
