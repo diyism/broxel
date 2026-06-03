@@ -1,6 +1,7 @@
     // original: https://codeberg.org/janantos/brow6el
     $ git clone https://github.com/diyism/broxel
     $ cd broxel
+    $ sudo apt install -y cmake build-essential python3 pkg-config
     $ sudo apt install -y libsixel1
     $ ./download_cef.sh
     $ ./build.sh
