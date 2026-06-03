@@ -5,7 +5,9 @@
     $ sudo apt install -y libsixel-dev libx11-dev
     $ ./download_cef.sh
     $ ./build.sh
-    $ ./build/run_brow6el.sh https://www.google.com/ncr
+    $ sudo mv ./build /opt/brow6el
+    $ sudo ln -s /opt/brow6el/run_brow6el.sh /usr/bin/brow6el
+    $ brow6el https://www.google.com/ncr
     
     // use "x" key to exit, if used "ctrl+c", use "reset" command to avoid mouse events printing
 
