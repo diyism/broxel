@@ -1,4 +1,10 @@
     // original: https://codeberg.org/janantos/brow6el
+    $ git clone https://github.com/diyism/broxel
+    $ cd broxel
+    $ ./download_cef.sh
+    $ ./build.sh
+    $ ./build/run_brow6el.sh https://www.google.com/ncr
+    
     // use "x" key to exit, if used "ctrl+c", use "reset" command to avoid mouse events printing
 
     // modified feature: "--custom" means ./brow6el_profile/ is the profile folder:
