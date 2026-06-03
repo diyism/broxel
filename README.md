@@ -1,6 +1,7 @@
     // original: https://codeberg.org/janantos/brow6el
     $ git clone https://github.com/diyism/broxel
     $ cd broxel
+    $ sudo apt install -y libsixel1
     $ ./download_cef.sh
     $ ./build.sh
     $ ./build/run_brow6el.sh https://www.google.com/ncr
